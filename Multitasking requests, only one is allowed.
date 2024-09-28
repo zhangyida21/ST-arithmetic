@@ -1,0 +1,115 @@
+VAR
+    RequestCount: INT := 0;
+    ExecuteRequest1: BOOL := FALSE;
+    ExecuteRequest2: BOOL := FALSE;
+    ExecuteRequest3: BOOL := FALSE;
+    ExecuteRequest4: BOOL := FALSE;
+    ExecuteRequest5: BOOL := FALSE;
+    ExecuteRequest6: BOOL := FALSE;
+    ExecuteRequest7: BOOL := FALSE;
+    ExecuteRequest8: BOOL := FALSE;
+    Request1: BOOL := FALSE;
+    Request2: BOOL := FALSE;
+    Request3: BOOL := FALSE;
+    Request4: BOOL := FALSE;
+    Request5: BOOL := FALSE;
+    Request6: BOOL := FALSE;
+    Request7: BOOL := FALSE;
+    Request8: BOOL := FALSE;
+
+
+END_VAR
+
+
+(* 检查请求并执行 *)
+IF RequestCount = 0 THEN
+    IF Request1 THEN
+        ExecuteRequest1 := 1;
+        RequestCount := 1;
+    ELSIF Request2 THEN
+        ExecuteRequest2 := 1;
+        RequestCount := 2;
+    ELSIF Request3 THEN
+        ExecuteRequest3 := 1;
+        RequestCount := 3;
+    ELSIF Request4 THEN
+        ExecuteRequest4 := 1;
+        RequestCount := 4;
+    ELSIF Request5 THEN
+        ExecuteRequest5 := 1;
+        RequestCount := 5;
+    ELSIF Request6 THEN
+        ExecuteRequest6 := 1;
+        RequestCount := 6;
+    ELSIF Request7 THEN
+        ExecuteRequest7 := 1;
+        RequestCount := 7;
+    ELSIF Request8 THEN
+        ExecuteRequest8 := 1;
+        RequestCount := 8;
+    
+    END_IF;
+     
+END_IF;
+
+(* 处理请求完成 *)
+IF RequestCount > 0 THEN
+    IF ExecuteRequest1 THEN
+        IF NOT Request1 THEN
+            ExecuteRequest1 := 0;
+            RequestCount := 0;  (* 处理完Request2 *)
+        END_IF;
+    ELSIF ExecuteRequest2 THEN
+        IF NOT Request2 THEN
+            ExecuteRequest2 := 0;
+            RequestCount := 0;  (* 处理完Request1 *)
+        END_IF;
+    ELSIF ExecuteRequest3 THEN
+        IF NOT Request3 THEN
+            ExecuteRequest3 := 0;
+            RequestCount := 0;  (* 处理完Request3 *)
+        END_IF;
+	ELSIF ExecuteRequest4 THEN
+        IF NOT Request4 THEN
+            ExecuteRequest4 := 0;
+            RequestCount := 0;  (* 处理完Request4 *)
+        END_IF;
+	ELSIF ExecuteRequest5 THEN
+        IF NOT Request5 THEN
+            ExecuteRequest5 := 0;
+            RequestCount := 0;  (* 处理完Request5 *)
+        END_IF;
+	ELSIF ExecuteRequest6 THEN
+        IF NOT Request6 THEN
+            ExecuteRequest6 := 0;
+            RequestCount := 0;  (* 处理完Request6 *)
+        END_IF;
+	ELSIF ExecuteRequest7 THEN
+        IF NOT Request7 THEN
+            ExecuteRequest7 := 0;
+            RequestCount := 0;  (* 处理完Request7 *)
+        END_IF;
+	ELSIF ExecuteRequest8 THEN
+        IF NOT Request8 THEN
+            ExecuteRequest8 := 0;
+            RequestCount := 0;  (* 处理完Request8 *)
+        END_IF;
+
+
+
+	END_IF;
+END_IF;
+
+if RequestCount = 0 then
+	ExecuteRequest1 :=0;
+	ExecuteRequest2 :=0;
+	ExecuteRequest3 :=0;
+	ExecuteRequest4 :=0;
+	ExecuteRequest5 :=0;
+	ExecuteRequest6 :=0;
+	ExecuteRequest7 :=0;
+	ExecuteRequest8 :=0;
+end_if;
+
+
+
